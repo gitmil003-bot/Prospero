@@ -22,10 +22,10 @@ function App() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-pine-tree">
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-pine-tree/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
@@ -43,8 +43,8 @@ function App() {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-sm font-medium transition-colors duration-300 hover:text-amber-500 ${
-                    isScrolled ? 'text-gray-700' : 'text-white'
+                  className={`text-sm font-medium transition-colors duration-300 hover:text-coffee ${
+                    isScrolled ? 'text-white-coffee' : 'text-white'
                   }`}
                 >
                   {item}
@@ -57,7 +57,7 @@ function App() {
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className={`transition-colors duration-300 ${
-                  isScrolled ? 'text-gray-700' : 'text-white'
+                  isScrolled ? 'text-white-coffee' : 'text-white'
                 }`}
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -67,13 +67,13 @@ function App() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden bg-white border-t">
+            <div className="md:hidden bg-van-dyke-brown border-t border-coffee">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {['Home', 'Products', 'About', 'Contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="block px-3 py-2 text-gray-700 hover:text-amber-500 transition-colors duration-300"
+                    className="block px-3 py-2 text-white-coffee hover:text-beaver transition-colors duration-300"
                   >
                     {item}
                   </button>
@@ -95,8 +95,8 @@ function App() {
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         
-        <div className="relative z-10 text-center text-white px-4 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
+        <div className="relative z-10 text-center text-white-coffee px-4 animate-fade-in">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 animate-slide-up">
             PROSPERO
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-slide-up-delay">
@@ -104,7 +104,7 @@ function App() {
           </p>
           <button 
             onClick={() => scrollToSection('products')}
-            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 animate-slide-up-delay-2"
+            className="bg-coffee hover:bg-van-dyke-brown text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 animate-slide-up-delay-2"
           >
             Discover Our Collection
           </button>
@@ -116,31 +116,31 @@ function App() {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-20 bg-gray-50">
+      <section id="products" className="py-20 bg-van-dyke-brown">
         <style>
           {`
             .scroll-container::-webkit-scrollbar {
               height: 8px;
             }
             .scroll-container::-webkit-scrollbar-track {
-              background: #f1f1f1;
+              background: #5A3D29;
               border-radius: 4px;
             }
             .scroll-container::-webkit-scrollbar-thumb {
-              background: #d97706;
+              background: #9A8670;
               border-radius: 4px;
             }
             .scroll-container::-webkit-scrollbar-thumb:hover {
-              background: #b45309;
+              background: #E8DED6;
             }
           `}
         </style>
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white-coffee mb-4">
               Our Collection
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-white-coffee max-w-3xl mx-auto mb-8">
               Discover our diverse range of premium products: pure chocolate powders for the perfect drink, 
               functional chocolates for health benefits, delightful snacks, and crispy fruit treats. 
               Each product is crafted with care to bring you the best in taste and quality.
@@ -152,8 +152,8 @@ function App() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-2 rounded-full transition-all duration-300 ${
                     selectedCategory === category
-                      ? 'bg-amber-600 text-white'
-                      : 'bg-amber-100 text-amber-900 hover:bg-amber-200'
+                      ? 'bg-coffee text-white'
+                      : 'bg-pine-tree text-white-coffee hover:bg-pine-tree/80'
                   }`}
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -307,7 +307,7 @@ function App() {
             .map((product, index) => (
               <div 
                 key={product.name}
-                className={`bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-xl animate-fade-in-up ${
+                className={`bg-white-coffee rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-xl animate-fade-in-up ${
                   selectedCategory === 'all' ? 'flex-none w-full md:w-[calc(25%-0.75rem)] snap-center' : ''
                 }`}
                 style={{ animationDelay: `${index * 0.2}s` }}
@@ -369,31 +369,31 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-van-dyke-brown">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
-              <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white-coffee mb-6">
                 Our Story
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-white-coffee mb-6">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae repellat facilis, 
               perferendis esse illum reiciendis culpa dolores maxime voluptas ipsum. 
               Labore ab eveniet perferendis voluptatem? Voluptas eius in sit tenetur?
               </p>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-white-coffee mb-6">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae repellat facilis, 
               perferendis esse illum reiciendis culpa dolores maxime voluptas ipsum. 
               Labore ab eveniet perferendis voluptatem? Voluptas eius in sit tenetur?
               </p>
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-amber-600">70+</div>
-                  <div className="text-gray-600">Years of Excellence</div>
+                  <div className="text-3xl font-bold text-white-coffee">70+</div>
+                  <div className="text-beaver">Years of Excellence</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-amber-600">50+</div>
-                  <div className="text-gray-600">Unique Flavors</div>
+                  <div className="text-3xl font-bold text-white-coffee">50+</div>
+                  <div className="text-beaver">Unique Flavors</div>
                 </div>
               </div>
             </div>
@@ -411,10 +411,10 @@ function App() {
         {/* Certificates Section */}
         <div className="mt-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-van-dyke-brown mb-4">
               Our Certificates
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white-coffee max-w-3xl mx-auto">
               Quality and safety certifications that demonstrate our commitment to excellence
             </p>
           </div>
@@ -512,10 +512,10 @@ function App() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-amber-50">
+      <section className="py-20 bg-pine-tree">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white-coffee mb-4">
               Why Choose Prospero?
             </h2>
           </div>
@@ -540,12 +540,12 @@ function App() {
             ].map((feature, index) => (
               <div 
                 key={feature.title}
-                className="text-center bg-white p-8 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up"
+                className="text-center bg-van-dyke-brown p-8 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="text-6xl mb-4">{feature.icon}</div>
-                <h3 className="text-2xl font-bold text-amber-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-2xl font-bold text-white-coffee mb-4">{feature.title}</h3>
+                <p className="text-beaver">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -553,55 +553,55 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-amber-900 text-white">
+      <section id="contact" className="py-20 bg-van-dyke-brown text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white-coffee">
               Get in Touch
             </h2>
-            <p className="text-xl opacity-90">
+            <p className="text-xl text-beaver">
               Ready to experience the finest chocolate? Contact us today.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center animate-fade-in-up">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-600 rounded-full mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-coffee rounded-full mb-4">
                 <Phone size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-2">Call Us</h3>
-              <p className="opacity-90">+62 21290003645 </p>
+              <h3 className="text-xl font-bold mb-2 text-white-coffee">Call Us</h3>
+              <p className="text-beaver">+62 21290003645 </p>
             </div>
 
             <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-600 rounded-full mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-coffee rounded-full mb-4">
                 <Mail size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-2">Email Us</h3>
-              <p className="opacity-90">prosperofood.business@gmail.com</p>
+              <h3 className="text-xl font-bold mb-2 text-white-coffee">Email Us</h3>
+              <p className="text-beaver">prosperofood.business@gmail.com</p>
             </div>
 
             <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-600 rounded-full mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-coffee rounded-full mb-4">
                 <MapPin size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-2">Visit Us</h3>
-              <p className="opacity-90">Paramount Marketplace, Ruko Tematik P52<br />Gading Serpong, Tangerang 15810</p>
+              <h3 className="text-xl font-bold mb-2 text-white-coffee">Visit Us</h3>
+              <p className="text-beaver">Paramount Marketplace, Ruko Tematik P52<br />Gading Serpong, Tangerang 15810</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-amber-950 text-white py-12">
+      <footer className="bg-pine-tree text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">PROSPERO</h3>
-            <p className="text-amber-200 mb-4">
+            <h3 className="text-2xl font-bold mb-4 text-white-coffee">PROSPERO</h3>
+            <p className="text-beaver mb-4">
               Crafting chocolate perfection since...
             </p>
-            <div className="border-t border-amber-800 pt-8 mt-8">
-              <p className="text-amber-300">
+            <div className="border-t border-coffee pt-8 mt-8">
+              <p className="text-beaver">
                 © 2025 Prospero All rights reserved.
               </p>
             </div>
