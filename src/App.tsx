@@ -31,7 +31,7 @@ function App() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <img 
-                src="/src/images/Logo Prosperofood.png"
+                src="/MPM/images/Logo Prosperofood.png"
                 alt="Prospero Logo"
                 className="h-12 w-auto transition-all duration-300"
               />
@@ -89,7 +89,7 @@ function App() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/src/images/herobg.jpg)',
+            backgroundImage: 'url(/MPM/images/herobg.jpg)',
           }}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -172,7 +172,7 @@ function App() {
               {
                 name: 'Realcho Box',
                 description: 'Pure chocolate bliss no milk, no sugar, no preservatives. Rich, intense flavor for hot or cold drinks.',
-                image: '/src/images/products/Realcho Variant Box.jpeg',
+                image: '/MPM/images/products/Realcho Variant Box.jpeg',
                 category: 'powder',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-original-premium-chocolate-drink-saset-lama-1731910075665844061?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
@@ -183,7 +183,7 @@ function App() {
               {
                 name: 'Realcho Fiber',
                 description: 'Sip smart! Chocolate with Carb Blocker to support smooth digestion.',
-                image: '/src/images/products/Realcho original tube 2.jpeg',
+                image: '/MPM/images/products/Realcho original tube 2.jpeg',
                 category: 'functional',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/realcho-fiber',
@@ -194,7 +194,7 @@ function App() {
               {
                 name: 'Realcho Rewind',
                 description: 'Turn back time with NAD+++ chocolate — firmer skin & anti-aging in every sip.',
-                image: '/src/images/products/Realcho Rewind Tube.jpeg',
+                image: '/MPM/images/products/Realcho Rewind Tube.jpeg',
                 category: 'functional',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/realcho-rewind',
@@ -205,7 +205,7 @@ function App() {
               {
                 name: 'Realcho Bright',
                 description: 'Chocolate enriched with Vitamin A — for healthy eyes and sharper memory.',
-                image: '/src/images/products/Realcho Bright Tube.jpeg',
+                image: '/MPM/images/products/Realcho Bright Tube.jpeg',
                 category: 'functional',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/realcho-bright',
@@ -216,7 +216,7 @@ function App() {
               {
                 name: 'Realcho High Fiber',
                 description: 'Diabetic & diet-friendly chocolate. High fiber supports metabolism and body cleansing.',
-                image: '/src/images/products/Prospero High Fiber.png',
+                image: '/MPM/images/products/Prospero High Fiber.png',
                 category: 'functional',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/realcho-high-fiber',
@@ -227,7 +227,7 @@ function App() {
               {
                 name: 'Realcho Original',
                 description: 'Pure chocolate bliss — no milk, no sugar, no preservatives. Rich, intense flavor for hot or cold drinks.',
-                image: '/src/images/products/Prospero Original.png',
+                image: '/MPM/images/products/Prospero Original.png',
                 category: 'powder',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-original-premium-chocolate-drink-saset-lama-1731910075665844061?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
@@ -238,7 +238,7 @@ function App() {
               {
                 name: 'Realcho Dark Chocolate 85%',
                 description: 'Bold & intense 85% dark chocolate powder that supports heart health and blood pressure.',
-                image: '/src/images/products/Dark Chocolate 85_.jpeg',
+                image: '/MPM/images/products/Dark Chocolate 85_.jpeg',
                 category: 'powder',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/realcho-dark85',
@@ -249,7 +249,7 @@ function App() {
               {
                 name: 'Chobayoo BiscuitBall',
                 description: 'Crunchy biscuit balls coated in chocolate — fun for kids, tasty for adults.',
-                image: '/src/images/products/Biscuitball @100g @60g.jpeg',
+                image: '/MPM/images/products/Biscuitball @100g @60g.jpeg',
                 category: 'snack',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/chobayoo-biscuitball',
@@ -260,7 +260,7 @@ function App() {
               {
                 name: 'Chobayoo CoffeeBall',
                 description: 'Roasted coffee beans with a nutty crunch, coated in rich chocolate.',
-                image: '/src/images/products/Coffeeball @100g @20g.jpeg',
+                image: '/MPM/images/products/Coffeeball @100g @20g.jpeg',
                 category: 'snack',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/chobayoo-coffeeball',
@@ -271,7 +271,7 @@ function App() {
               {
                 name: 'Belilagi Freeze-Dried Fruits',
                 description: 'Crispy fruit chips made at –40°C to lock in natural vitamins & minerals.',
-                image: '/src/images/products/FD Pouch.jpeg',
+                image: '/MPM/images/products/FD Pouch.jpeg',
                 category: 'fruit',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/belilagi-freeze-dried',
@@ -282,7 +282,7 @@ function App() {
               {
                 name: 'Fruttachips',
                 description: 'Crunchy vacuum-fried fruit chips — long-lasting, naturally tasty snacking.',
-                image: '/src/images/products/Fruttachips Mix.jpeg',
+                image: '/MPM/images/products/Fruttachips Mix.jpeg',
                 category: 'fruit',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/fruttachips',
@@ -293,7 +293,7 @@ function App() {
               {
                 name: 'Chipsoe Snack',
                 description: 'Crispy Indonesian harvest: salted egg fish skin, potato, and tempeh chips.',
-                image: '/src/images/products/Potato Chips Pouch.jpeg',
+                image: '/MPM/images/products/Potato Chips Pouch.jpeg',
                 category: 'snack',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/chipsoe',
@@ -331,7 +331,7 @@ function App() {
                       className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-green-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-green-500"
                     >
                       <img 
-                        src="/src/images/marketplaces/tokopedia.png" 
+                        src="/MPM/images/marketplaces/tokopedia.png" 
                         alt="Tokopedia" 
                         className="h-6 object-contain"
                       />
@@ -343,7 +343,7 @@ function App() {
                       className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-orange-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-orange-500"
                     >
                       <img 
-                        src="/src/images/marketplaces/shopee.png" 
+                        src="/MPM/images/marketplaces/shopee.png" 
                         alt="Shopee" 
                         className="h-6 object-contain"
                       />
@@ -355,7 +355,7 @@ function App() {
                       className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-blue-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-blue-500"
                     >
                       <img 
-                        src="/src/images/marketplaces/blibli.png" 
+                        src="/MPM/images/marketplaces/blibli.png" 
                         alt="Blibli" 
                         className="h-6 object-contain"
                       />
@@ -423,67 +423,67 @@ function App() {
             {[
               {
                 name: "Kosher Certificate",
-                image: "/src/images/certificate/Kosher-Valiad-09-Aug-2025_Certificate1728629995/Kosher Valiad 09 Aug 2025_Certificate1728629995_page-0001.jpg",
+                image: "/MPM/images/certificate/Kosher-Valiad-09-Aug-2025_Certificate1728629995/Kosher Valiad 09 Aug 2025_Certificate1728629995_page-0001.jpg",
                 description: "Valid until August 09, 2025 - Certifying our products meet kosher dietary requirements"
               },
               {
                 name: "BPJPH Certificate - Chocolate Drinks",
-                image: "/src/images/certificate/SERTTIFIKAT BPJPH MINUMAN COKLAT/SERTTIFIKAT BPJPH MINUMAN COKLAT_page-0001.jpg",
+                image: "/MPM/images/certificate/SERTTIFIKAT BPJPH MINUMAN COKLAT/SERTTIFIKAT BPJPH MINUMAN COKLAT_page-0001.jpg",
                 description: "Halal certification for our premium chocolate drink products"
               },
               {
                 name: "BPJPH Certificate - Chocolate Praline",
-                image: "/src/images/certificate/SERTTIFIKAT BPJPH COKLAT PRALINE/SERTTIFIKAT BPJPH COKLAT PRALINE_page-0001.jpg",
+                image: "/MPM/images/certificate/SERTTIFIKAT BPJPH COKLAT PRALINE/SERTTIFIKAT BPJPH COKLAT PRALINE_page-0001.jpg",
                 description: "Halal certification for our chocolate praline products"
               },
               {
                 name: "NIE - Realcho Original",
-                image: "/src/images/certificate/NIE_REALCHO/realcho_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_REALCHO/realcho_page-0001.jpg",
                 description: "National Industrial Registration for Realcho Original products"
               },
               {
                 name: "NIE - Realcho 125g",
-                image: "/src/images/certificate/NIE_PROSPERO REALCHO 125_signed/NIE_EREG307369202200001_signed_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_PROSPERO REALCHO 125_signed/NIE_EREG307369202200001_signed_page-0001.jpg",
                 description: "Product registration certificate for Realcho 125g variant"
               },
               {
                 name: "NIE - Realcho 250g",
-                image: "/src/images/certificate/NIE_PROSPERO REALCHO 250_signed/NIE_EREG307369202200010_signed_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_PROSPERO REALCHO 250_signed/NIE_EREG307369202200010_signed_page-0001.jpg",
                 description: "Product registration certificate for Realcho 250g variant"
               },
               {
                 name: "NIE - Chobayoo Coffee Bean Pouch",
-                image: "/src/images/certificate/NIE_CHOBAYOO-BIJI-KOPI-POUCH/NIE_CHOBAYOO BIJI KOPI POUCH_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_CHOBAYOO-BIJI-KOPI-POUCH/NIE_CHOBAYOO BIJI KOPI POUCH_page-0001.jpg",
                 description: "Product registration for Chobayoo Coffee Bean Pouch packaging"
               },
               {
                 name: "NIE - Chobayoo Coffee Bean Jar",
-                image: "/src/images/certificate/NIE_CHOBAYO BIJI KOPI TOPLES_signed/NIE_EREG307369202000015_signed_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_CHOBAYO BIJI KOPI TOPLES_signed/NIE_EREG307369202000015_signed_page-0001.jpg",
                 description: "Product registration for Chobayoo Coffee Bean Jar packaging"
               },
               {
                 name: "NIE - Chobayoo Biscuit Carton",
-                image: "/src/images/certificate/NIE_CHOBAYOO-ISI-BISKUIT-KARTON/NIE_CHOBAYOO ISI BISKUIT KARTON_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_CHOBAYOO-ISI-BISKUIT-KARTON/NIE_CHOBAYOO ISI BISKUIT KARTON_page-0001.jpg",
                 description: "Product registration for Chobayoo Biscuit Carton packaging"
               },
               {
                 name: "NIE - Chobayoo Biscuit Jar",
-                image: "/src/images/certificate/NIE_CHOBAYO ISI BISKUIT TOPLES _signed/NIE_EREG307369202000014_signed_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_CHOBAYO ISI BISKUIT TOPLES _signed/NIE_EREG307369202000014_signed_page-0001.jpg",
                 description: "Product registration for Chobayoo Biscuit Jar packaging"
               },
               {
                 name: "NIE - Chobayoo Coffee Bean Box",
-                image: "/src/images/certificate/NIE_CHOBAYO BIJI KOPI KARTON_signed/NIE_EREG307369202000008_signed_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_CHOBAYO BIJI KOPI KARTON_signed/NIE_EREG307369202000008_signed_page-0001.jpg",
                 description: "Product registration for Chobayoo Coffee Bean Box packaging"
               },
               {
                 name: "NIE - Chobayoo Pouch",
-                image: "/src/images/certificate/NIE_CHOBAYOO-POUCH/NIE_CHOBAYOO POUCH_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_CHOBAYOO-POUCH/NIE_CHOBAYOO POUCH_page-0001.jpg",
                 description: "Product registration for Chobayoo Pouch products"
               },
               {
                 name: "NIE - Fruttachips",
-                image: "/src/images/certificate/NIE_FRUTTACHIPS_signed/NIE_EREG307369202200024_signed_page-0001.jpg",
+                image: "/MPM/images/certificate/NIE_FRUTTACHIPS_signed/NIE_EREG307369202200024_signed_page-0001.jpg",
                 description: "Product registration certificate for Fruttachips products"
               }
             ].map((certificate, index) => (
