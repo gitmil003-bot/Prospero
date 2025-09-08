@@ -166,31 +166,42 @@ function App() {
             selectedCategory === 'all' 
               ? 'flex overflow-x-auto gap-8 pb-4 snap-x snap-mandatory scroll-container'
               : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'
-          }`}>
+            }`}>
             {
-            [
-              {
-                name: 'Realcho Box',
-                description: 'Pure chocolate bliss no milk, no sugar, no preservatives. Rich, intense flavor for hot or cold drinks.',
-                image: 'images/products/Realcho Variant Box.jpeg',
-                category: 'powder',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-original-premium-chocolate-drink-saset-lama-1731910075665844061?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/realcho/ps--PRO-200001'
-                }
-              },
-              {
-                name: 'Realcho Fiber',
-                description: 'Sip smart! Chocolate with Carb Blocker to support smooth digestion.',
-                image: 'images/products/Realcho original tube 2.jpeg',
-                category: 'functional',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/realcho-fiber',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/realcho-fiber/ps--PRO-200002'
-                }
-              },
+              [
+                {
+                  name: 'Realcho Box',
+                  description: 'Pure chocolate bliss no milk, no sugar, no preservatives. Rich, intense flavor for hot or cold drinks.',
+                  image: 'images/products/Realcho Variant Box.jpeg',
+                  category: 'powder',
+                  links: {
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-original-premium-chocolate-drink-saset-lama-1731910075665844061?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
+                    shopee: 'https://shopee.co.id/prosperofood',
+                    blibli: 'https://www.blibli.com/p/realcho/ps--PRO-200001'
+                  }
+                },
+                {
+                  name: 'Realcho Original',
+                  description: 'Pure chocolate bliss — no milk, no sugar, no preservatives. Rich, intense flavor for hot or cold drinks.',
+                  image: 'images/products/Realcho original tube 2.jpeg',
+                  category: 'powder',
+                  links: {
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-original-premium-chocolate-drink-saset-lama-1731910075665844061?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
+                    shopee: 'https://shopee.co.id/prosperofood',
+                    blibli: 'https://www.blibli.com/p/realcho/ps--PRO-200001'
+                  }
+                },
+                // {
+                  //   name: 'Realcho Fiber',
+              //   description: 'Sip smart! Chocolate with Carb Blocker to support smooth digestion.',
+              //   image: 'images/products/Realcho original tube 2.jpeg',
+              //   category: 'functional',
+              //   links: {
+              //     tokopedia: 'https://www.tokopedia.com/prospero/realcho-fiber',
+              //     shopee: 'https://shopee.co.id/prosperofood',
+              //     blibli: 'https://www.blibli.com/p/realcho-fiber/ps--PRO-200002'
+              //   }
+              // },
               {
                 name: 'Realcho Rewind',
                 description: 'Turn back time with NAD+++ chocolate — firmer skin & anti-aging in every sip.',
@@ -205,7 +216,7 @@ function App() {
               {
                 name: 'Realcho Bright',
                 description: 'Chocolate enriched with Vitamin A — for healthy eyes and sharper memory.',
-                image: 'images/products/Realcho Bright Tube.jpeg',
+                image: 'images/products/Realcho Bright Tube.jpg',
                 category: 'functional',
                 links: {
                   tokopedia: 'https://www.tokopedia.com/prospero/realcho-bright',
@@ -222,17 +233,6 @@ function App() {
                   tokopedia: 'https://www.tokopedia.com/prospero/realcho-high-fiber',
                   shopee: 'https://shopee.co.id/prosperofood',
                   blibli: 'https://www.blibli.com/p/realcho-high-fiber/ps--PRO-200005'
-                }
-              },
-              {
-                name: 'Realcho Original',
-                description: 'Pure chocolate bliss — no milk, no sugar, no preservatives. Rich, intense flavor for hot or cold drinks.',
-                image: 'images/products/Prospero Original.png',
-                category: 'powder',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-original-premium-chocolate-drink-saset-lama-1731910075665844061?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/realcho/ps--PRO-200001'
                 }
               },
               {
@@ -377,18 +377,19 @@ function App() {
                 Our Story
               </h2>
               <p className="text-lg text-white-coffee mb-6">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae repellat facilis, 
-              perferendis esse illum reiciendis culpa dolores maxime voluptas ipsum. 
-              Labore ab eveniet perferendis voluptatem? Voluptas eius in sit tenetur?
+              Founded in 2015, ProsperoFood began with a passion for authentic chocolate. 
+              Using 100% local Indonesian ingredients, our first creation a unique chocolate drink powder without milk or 
+              artificial sugar quickly became our signature product for true chocolate lovers.
+
               </p>
               <p className="text-lg text-white-coffee mb-6">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae repellat facilis, 
-              perferendis esse illum reiciendis culpa dolores maxime voluptas ipsum. 
-              Labore ab eveniet perferendis voluptatem? Voluptas eius in sit tenetur?
+              As time went on, we expanded into new creations such as chocolate snacks and dry snacks, especially during the pandemic. 
+              Today, ProsperoFood not only reaches customers across Indonesia through social media, e-commerce, 
+              and direct café partnerships but also showcases Indonesian chocolate to the world through international exhibitions.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white-coffee">70+</div>
+                  <div className="text-3xl font-bold text-white-coffee">10+</div>
                   <div className="text-beaver">Years of Excellence</div>
                 </div>
                 <div className="text-center">
@@ -523,29 +524,33 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Premium Quality',
-                description: 'Only the finest Belgian cocoa beans, carefully selected and processed',
-                icon: '🍫'
+                title: 'Quality',
+                description: 'Only the finest Belgian cocoa beans, carefully selected and processed'
               },
               {
-                title: 'Handcrafted',
-                description: 'Every piece is made by hand using traditional artisanal techniques',
-                icon: '👐'
+                title: 'Healthy',
+                description: 'Every piece is made with attention to health and wellness to bring out the best '
               },
               {
                 title: 'Sustainable',
-                description: 'Ethically sourced ingredients supporting local farming communities',
-                icon: '🌱'
+                description: 'Ethically sourced ingredients supporting local farming communities'
               }
             ].map((feature, index) => (
               <div 
                 key={feature.title}
-                className="text-center bg-van-dyke-brown p-8 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up"
+                className="text-center bg-white-coffee p-12 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up min-h-[400px] flex flex-col justify-between"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="text-6xl mb-4">{feature.icon}</div>
-                <h3 className="text-2xl font-bold text-white-coffee mb-4">{feature.title}</h3>
-                <p className="text-beaver">{feature.description}</p>
+                <div className="mb-8 flex-1 flex items-center justify-center">
+                  <img 
+                    src={`images/icons/${feature.title.toLowerCase().replace(' ', '-')}.png`}
+                    alt={feature.title}
+                    className="w-64 h-64 object-contain"
+                  />
+                </div>
+                <div>
+                  <p className="text-pine-tree text-lg leading-relaxed">{feature.description}</p>
+                </div>
               </div>
             ))}
           </div>
