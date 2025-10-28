@@ -98,9 +98,9 @@ function App() {
         </div>
         
         <div className="relative z-10 text-center text-white-coffee px-4 animate-fade-in">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 animate-slide-up">
-            <span className="text-white-coffee">PROSPERO</span>
-            <span className="text-coffee">FOOD</span>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 animate-slide-up tracking-wider">
+            <span className="text-white-coffee drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] hover:text-white transition-colors duration-300">PROSPERO</span>
+            <span className="text-coffee drop-shadow-[0_2px_1px_rgba(0,0,0,0.2)] hover:text-amber-700 transition-colors duration-300">FOOD</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-slide-up-delay">
             Indonesian Chocolate Premium Drink
@@ -841,7 +841,7 @@ function App() {
       <footer className="bg-pine-tree text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4 text-white-coffee">PROSPEROFOOD</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white-coffee">PROSPERO FOOD</h3>
             <p className="text-beaver mb-4">
               Crafting chocolate perfection since...
             </p>
