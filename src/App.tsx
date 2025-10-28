@@ -99,7 +99,8 @@ function App() {
         
         <div className="relative z-10 text-center text-white-coffee px-4 animate-fade-in">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 animate-slide-up">
-            PROSPEROFOOD
+            <span className="text-white-coffee">PROSPERO</span>
+            <span className="text-coffee">FOOD</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-slide-up-delay">
             Indonesian Chocolate Premium Drink
