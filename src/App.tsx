@@ -5,6 +5,8 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,7 +99,7 @@ function App() {
         
         <div className="relative z-10 text-center text-white-coffee px-4 animate-fade-in">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 animate-slide-up">
-            PROSPERO
+            PROSPEROFOOD
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-slide-up-delay">
             Indonesian Chocolate Premium Drink
@@ -132,6 +134,19 @@ function App() {
             }
             .scroll-container::-webkit-scrollbar-thumb:hover {
               background: #E8DED6;
+            }
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+                transform: translate(-50%, 10px);
+              }
+              to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+              }
+            }
+            .animate-fadeIn {
+              animation: fadeIn 0.3s ease-out forwards;
             }
           `}
         </style>
@@ -170,138 +185,237 @@ function App() {
             {
               [
                 {
-                  name: 'Realcho Box',
-                  description: 'Pure chocolate bliss no milk, no sugar, no preservatives. Rich, intense flavor for hot or cold drinks.',
-                  image: 'images/products/Realcho Variant Box.jpeg',
+                  name: 'Prospero Realcho',
+                  description: 'Premium chocolate powder drink — milk-free, sugar-free, and preservative-free. Strong chocolate aroma and taste, perfect for hot or cold serving. Certified BPOM, HALAL, ISO 9001:2015, FSSC 22000, US FDA.',
+                  image: 'images/products/Realcho original tube 2.jpeg',
                   category: 'powder',
+                  packaging: [
+                    '24 box @5sachets 25g/carton',
+                    '10 can @10sachets 25g/can',
+                    '1Kg x 10 alum foil/carton',
+                    '200 sachets @25g/carton'
+                  ],
                   links: {
-                    tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-original-premium-chocolate-drink-saset-lama-1731910075665844061?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-original-premium-chocolate-drink-1-can-10-saset-1731910031867152221?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
                     shopee: 'https://shopee.co.id/prosperofood',
                     blibli: 'https://www.blibli.com/p/realcho/ps--PRO-200001'
                   }
                 },
                 {
-                  name: 'Realcho Original',
-                  description: 'Pure chocolate bliss — no milk, no sugar, no preservatives. Rich, intense flavor for hot or cold drinks.',
-                  image: 'images/products/Realcho original tube 2.jpeg',
+                  name: 'Prospero Realcho Variant',
+                  description: 'Flavored chocolate drink powder — rich chocolate blended with natural flavors. Enjoy your favorite mix of taste and aroma, still milk-free and preservative-free.',
+                  image: 'images/products/Realcho Variant Box.jpeg',
                   category: 'powder',
+                  variants: [
+                    // {
+                    //   name: 'Chocolate Orange',
+                    //   links: {
+                    //     tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-variant-orange',
+                    //     shopee: 'https://shopee.co.id/prosperofood',
+                    //     blibli: 'https://www.blibli.com/p/realcho-orange/ps--PRO-200012'
+                    //   }
+                    // },
+                    {
+                      name: 'Chocolate Banana',
+                      links: {
+                        tokopedia: 'https://www.tokopedia.com/prosperofood/prospero-realcho-banana-box-1731046084120708506?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                        shopee: 'https://shopee.co.id/prosperofood',
+                        blibli: 'https://www.blibli.com/p/realcho-banana/ps--PRO-200013'
+                      }
+                    },
+                    // {
+                    //   name: 'Chocolate Melon',
+                    //   links: {
+                    //     tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-variant-melon',
+                    //     shopee: 'https://shopee.co.id/prosperofood',
+                    //     blibli: 'https://www.blibli.com/p/realcho-melon/ps--PRO-200014'
+                    //   }
+                    // },
+                    {
+                      name: 'Chocolate Tea',
+                      links: {
+                        tokopedia: 'https://www.tokopedia.com/prosperofood/prospero-realcho-chocotea-box-minuman-coklat-1731873698854111069?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                        shopee: 'https://shopee.co.id/prosperofood',
+                        blibli: 'https://www.blibli.com/p/realcho-tea/ps--PRO-200015'
+                      }
+                    },
+                    {
+                      name: 'Chocolate Coffee',
+                      links: {
+                        tokopedia: 'https://www.tokopedia.com/prosperofood/prospero-realcho-coffeecho-box-1731046210927691162?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                        shopee: 'https://shopee.co.id/prosperofood',
+                        blibli: 'https://www.blibli.com/p/realcho-coffee/ps--PRO-200016'
+                      }
+                    },
+                    {
+                      name: 'Chocolate Mint',
+                      links: {
+                        tokopedia: 'https://www.tokopedia.com/prosperofood/prospero-realcho-chocomint-box-1731046136945608090?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                        shopee: 'https://shopee.co.id/prosperofood',
+                        blibli: 'https://www.blibli.com/p/realcho-mint/ps--PRO-200017'
+                      }
+                    },
+                    {
+                      name: 'Chocolate Hazelnut',
+                      links: {
+                        tokopedia: 'https://www.tokopedia.com/prosperofood/prospero-realcho-hazelcho-box-minuman-coklat-1731873671585695581?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                        shopee: 'https://shopee.co.id/prosperofood',
+                        blibli: 'https://www.blibli.com/p/realcho-hazelnut/ps--PRO-200018'
+                      }
+                    }
+                    // {
+                    //   name: 'Chocolate Caramel',
+                    //   links: {
+                    //     tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-variant-caramel',
+                    //     shopee: 'https://shopee.co.id/prosperofood',
+                    //     blibli: 'https://www.blibli.com/p/realcho-caramel/ps--PRO-200019'
+                    //   }
+                    // },
+                    // {
+                    //   name: 'Chocolate Rum',
+                    //   links: {
+                    //     tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-variant-rum',
+                    //     shopee: 'https://shopee.co.id/prosperofood',
+                    //     blibli: 'https://www.blibli.com/p/realcho-rum/ps--PRO-200020'
+                    //   }
+                    // },
+                    // {
+                    //   name: 'Chocolate Cappuccino',
+                    //   links: {
+                    //     tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-variant-cappuccino',
+                    //     shopee: 'https://shopee.co.id/prosperofood',
+                    //     blibli: 'https://www.blibli.com/p/realcho-cappuccino/ps--PRO-200021'
+                    //   }
+                    // }
+                  ],
+                  packaging: [
+                    '1Kg pouch',
+                    '250g standing pouch'
+                  ]
+                },
+                {
+                  name: 'Prospero Realcho Bright',
+                  description: 'Chocolate powder drink with Vitamin A, Vitamin C, and Ginkgo Biloba — supports eye, brain, and heart health. Ideal for kids and adults exposed to screens daily.',
+                  image: 'images/products/Realcho Bright Tube.jpg',
+                  category: 'functional',
                   links: {
-                    tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-original-premium-chocolate-drink-saset-lama-1731910075665844061?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-bright-premium-chocolate-drink-with-vit-a-good-for-eyes-1731909919438178141?extParam=whid%3D20349806%26src%3Dshop&aff_unique_id=&channel=others&chain_key=',
                     shopee: 'https://shopee.co.id/prosperofood',
-                    blibli: 'https://www.blibli.com/p/realcho/ps--PRO-200001'
+                    blibli: 'https://www.blibli.com/p/realcho-bright/ps--PRO-200004'
                   }
                 },
-                // {
-                  //   name: 'Realcho Fiber',
-              //   description: 'Sip smart! Chocolate with Carb Blocker to support smooth digestion.',
-              //   image: 'images/products/Realcho original tube 2.jpeg',
-              //   category: 'functional',
-              //   links: {
-              //     tokopedia: 'https://www.tokopedia.com/prospero/realcho-fiber',
-              //     shopee: 'https://shopee.co.id/prosperofood',
-              //     blibli: 'https://www.blibli.com/p/realcho-fiber/ps--PRO-200002'
-              //   }
-              // },
-              {
-                name: 'Realcho Rewind',
-                description: 'Turn back time with NAD+++ chocolate — firmer skin & anti-aging in every sip.',
-                image: 'images/products/Realcho Rewind Tube.jpeg',
-                category: 'functional',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/realcho-rewind',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/realcho-rewind/ps--PRO-200003'
+                {
+                  name: 'Prospero Realcho High Fiber',
+                  description: 'High-fiber chocolate drink that supports digestion and metabolism. Made with natural coconut sugar, safe for diabetics. Helps control weight and reduce stress.',
+                  image: 'images/products/Prospero High Fiber.png',
+                  category: 'functional',
+                  links: {
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-fiber-premium-chocolate-drink-1-can-10-saset-1731909774374176605?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
+                    shopee: 'https://shopee.co.id/prosperofood',
+                    blibli: 'https://www.blibli.com/p/realcho-high-fiber/ps--PRO-200005'
+                  }
+                },
+                {
+                  name: 'Prospero Realcho Rewind',
+                  description: 'Chocolate drink with Niacinamide (Vitamin B3) for anti-aging and body rejuvenation. Uses low-GI coconut sugar, safe for diabetics. Helps reduce uric acid and maintain joint health.',
+                  image: 'images/products/Realcho Rewind Tube.jpeg',
+                  category: 'functional',
+                  links: {
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/realcho-rewind-premium-chocolate-drink-for-anti-aging-1-can-10-saset-1731909620829488989?extParam=src%3Dshop%26whid%3D20349806&aff_unique_id=&channel=others&chain_key=',
+                    shopee: 'https://shopee.co.id/prosperofood',
+                    blibli: 'https://www.blibli.com/p/realcho-rewind/ps--PRO-200003'
+                  }
+                },
+                {
+                  name: 'Prospero Realcho Dark Chocolate 85%',
+                  description: '85% cocoa dark chocolate powder — bold flavor and rich aroma. Supports heart health and helps regulate blood pressure and cholesterol.',
+                  image: 'images/products/Dark Chocolate 85_.jpeg',
+                  category: 'powder',
+                  links: {
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/prospero-dark-chocolate-85?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                    shopee: 'https://shopee.co.id/prosperofood',
+                    blibli: 'https://www.blibli.com/p/realcho-dark85/ps--PRO-200006'
+                  }
+                },
+                {
+                  name: 'Chobayoo BiscuitBall',
+                  description: 'Crunchy chocolate-coated biscuit balls — perfect snack for kids and adults during work or leisure.',
+                  image: 'images/products/Biscuitball @100g @60g.jpeg',
+                  category: 'snack',
+                  links: {
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/chobayooo-biscuit-ball-100-gr?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                    shopee: 'https://shopee.co.id/prosperofood',
+                    blibli: 'https://www.blibli.com/p/chobayoo-biscuitball/ps--PRO-200007'
+                  }
+                },
+                {
+                  name: 'Chobayoo CoffeeBall',
+                  description: 'Roasted Indonesian coffee beans coated in chocolate — nutty and crunchy, offering a new way to enjoy coffee.',
+                  image: 'images/products/Coffeeball @100g @20g.jpeg',
+                  category: 'snack',
+                  links: {
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/chobayoo-coffeeball-100gr?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                    shopee: 'https://shopee.co.id/prosperofood',
+                    blibli: 'https://www.blibli.com/p/chobayoo-coffeeball/ps--PRO-200008'
+                  }
+                },
+                {
+                  name: 'Belilagi Freeze-Dried Fruits',
+                  description: 'Freeze-dried fruit chips made at –40°C to preserve natural vitamins and minerals. Suitable for children 6 months and older.',
+                  image: 'images/products/FD Pouch.jpeg',
+                  category: 'fruit',
+                  variants: [
+                    {
+                      name: 'Sweet Corn',
+                      links: {
+                        tokopedia: 'https://www.tokopedia.com/prosperofood/belilagi-freeze-dried-sweet-corn?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                        shopee: 'https://shopee.co.id/prosperofood',
+                        blibli: 'https://www.blibli.com/p/belilagi-freeze-dried/ps--PRO-200009'
+                      }
+                    },
+                    {
+                      name: 'Mix Fruit',
+                      links: {
+                        tokopedia: 'https://www.tokopedia.com/prosperofood/belilagi-freeze-dried-mix-fruit?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                        shopee: 'https://shopee.co.id/prosperofood',
+                        blibli: 'https://www.blibli.com/p/belilagi-freeze-dried/ps--PRO-200009'
+                      }
+                    },
+                    {
+                      name: 'Durian',
+                      links: {
+                        tokopedia: 'https://www.tokopedia.com/prosperofood/belilagi-freeze-dried-durian?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                        shopee: 'https://shopee.co.id/prosperofood',
+                        blibli: 'https://www.blibli.com/p/belilagi-freeze-dried/ps--PRO-200009'
+                      }
+                    }
+                  ]
+                },
+                {
+                  name: 'Fruttachips Mix Fruit',
+                  description: 'Crunchy vacuum-fried fruit chips made from Indonesian crops. Natural sweetness and long shelf life. Variants: Mix Fruit, Snake Fruit, Jackfruit, Banana, Apple.',
+                  image: 'images/products/Fruttachips Mix.jpeg',
+                  category: 'fruit',
+                  links: {
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/fruttachips-mix-fruit-100gr-1731046272832406938?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                    shopee: 'https://shopee.co.id/prosperofood',
+                    blibli: 'https://www.blibli.com/p/fruttachips/ps--PRO-200010'
+                  }
+                },
+                {
+                  name: 'Chipsoe Snack',
+                  description: 'Crispy Indonesian harvest snacks — Potato, Tempeh, and Salted Egg Fish Skin chips. Available in several flavors: Smoked Beef, Hot & Spicy, and Salted Egg. Certified BPOM and HALAL.',
+                  image: 'images/products/Potato Chips Pouch.jpeg',
+                  category: 'snack',
+                  links: {
+                    tokopedia: 'https://www.tokopedia.com/prosperofood/fruttachips-banana-60gr-keripik-pisang-1729923789926270362?extParam=src%3Dshop%26whid%3D9944726&aff_unique_id=&channel=others&chain_key=',
+                    shopee: 'https://shopee.co.id/prosperofood',
+                    blibli: 'https://www.blibli.com/p/chipsoe/ps--PRO-200011'
+                  }
                 }
-              },
-              {
-                name: 'Realcho Bright',
-                description: 'Chocolate enriched with Vitamin A — for healthy eyes and sharper memory.',
-                image: 'images/products/Realcho Bright Tube.jpg',
-                category: 'functional',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/realcho-bright',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/realcho-bright/ps--PRO-200004'
-                }
-              },
-              {
-                name: 'Realcho High Fiber',
-                description: 'Diabetic & diet-friendly chocolate. High fiber supports metabolism and body cleansing.',
-                image: 'images/products/Prospero High Fiber.png',
-                category: 'functional',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/realcho-high-fiber',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/realcho-high-fiber/ps--PRO-200005'
-                }
-              },
-              {
-                name: 'Realcho Dark Chocolate 85%',
-                description: 'Bold & intense 85% dark chocolate powder that supports heart health and blood pressure.',
-                image: 'images/products/Dark Chocolate 85_.jpeg',
-                category: 'powder',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/realcho-dark85',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/realcho-dark85/ps--PRO-200006'
-                }
-              },
-              {
-                name: 'Chobayoo BiscuitBall',
-                description: 'Crunchy biscuit balls coated in chocolate — fun for kids, tasty for adults.',
-                image: 'images/products/Biscuitball @100g @60g.jpeg',
-                category: 'snack',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/chobayoo-biscuitball',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/chobayoo-biscuitball/ps--PRO-200007'
-                }
-              },
-              {
-                name: 'Chobayoo CoffeeBall',
-                description: 'Roasted coffee beans with a nutty crunch, coated in rich chocolate.',
-                image: 'images/products/Coffeeball @100g @20g.jpeg',
-                category: 'snack',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/chobayoo-coffeeball',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/chobayoo-coffeeball/ps--PRO-200008'
-                }
-              },
-              {
-                name: 'Belilagi Freeze-Dried Fruits',
-                description: 'Crispy fruit chips made at –40°C to lock in natural vitamins & minerals.',
-                image: 'images/products/FD Pouch.jpeg',
-                category: 'fruit',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/belilagi-freeze-dried',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/belilagi-freeze-dried/ps--PRO-200009'
-                }
-              },
-              {
-                name: 'Fruttachips',
-                description: 'Crunchy vacuum-fried fruit chips — long-lasting, naturally tasty snacking.',
-                image: 'images/products/Fruttachips Mix.jpeg',
-                category: 'fruit',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/fruttachips',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/fruttachips/ps--PRO-200010'
-                }
-              },
-              {
-                name: 'Chipsoe Snack',
-                description: 'Crispy Indonesian harvest: salted egg fish skin, potato, and tempeh chips.',
-                image: 'images/products/Potato Chips Pouch.jpeg',
-                category: 'snack',
-                links: {
-                  tokopedia: 'https://www.tokopedia.com/prospero/chipsoe',
-                  shopee: 'https://shopee.co.id/prosperofood',
-                  blibli: 'https://www.blibli.com/p/chipsoe/ps--PRO-200011'
-                }
-              }
-            ]
+              ]
+
+
 
             .filter(product => selectedCategory === 'all' || product.category === selectedCategory)
             .map((product, index) => (
@@ -323,44 +437,169 @@ function App() {
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-amber-900 mb-2">{product.name}</h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
-                  <div className="flex justify-center gap-3">
-                    <a 
-                      href={product.links.tokopedia}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-green-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-green-500"
-                    >
-                      <img 
-                        src="images/marketplaces/tokopedia.png" 
-                        alt="Tokopedia" 
-                        className="h-6 object-contain"
-                      />
-                    </a>
-                    <a 
-                      href={product.links.shopee}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-orange-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-orange-500"
-                    >
-                      <img 
-                        src="images/marketplaces/shopee.png" 
-                        alt="Shopee" 
-                        className="h-6 object-contain"
-                      />
-                    </a>
-                    <a 
-                      href={product.links.blibli}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-blue-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-blue-500"
-                    >
-                      <img 
-                        src="images/marketplaces/blibli.png" 
-                        alt="Blibli" 
-                        className="h-6 object-contain"
-                      />
-                    </a>
-                  </div>
+                  
+                  {/* Show variant links if product has variants */}
+                  {'variants' in product && Array.isArray(product.variants) ? (
+                    <div className="relative mt-6">
+                      <div className="max-w-sm mx-auto">
+                        {/* Slider Container */}
+                        <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                          <div 
+                            className="flex transition-transform duration-500 ease-out"
+                            style={{
+                              transform: `translateX(-${currentSlide * 100}%)`
+                            }}
+                          >
+                            {(product.variants || []).map((variant) => (
+                              <div 
+                                key={variant.name}
+                                className="w-full flex-none"
+                              >
+                                <button
+                                  onClick={() => setSelectedVariant(
+                                    selectedVariant === variant.name ? null : variant.name
+                                  )}
+                                  className={`w-full px-6 py-4 text-center font-medium transition-all duration-300 ${
+                                    selectedVariant === variant.name 
+                                      ? 'bg-amber-50 text-amber-900' 
+                                      : 'text-amber-900 hover:bg-amber-50/50'
+                                  }`}
+                                >
+                                  {variant.name}
+                                </button>
+                                {selectedVariant === variant.name && (
+                                  <div className="flex justify-center gap-3 px-4 py-3">
+                                    <a 
+                                      href={variant.links.tokopedia}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-green-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-green-500"
+                                    >
+                                      <img 
+                                        src="images/marketplaces/tokopedia.png" 
+                                        alt="Tokopedia" 
+                                        className="h-6 object-contain"
+                                      />
+                                    </a>
+                                    <a 
+                                      href={variant.links.shopee}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-orange-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-orange-500"
+                                    >
+                                      <img 
+                                        src="images/marketplaces/shopee.png" 
+                                        alt="Shopee" 
+                                        className="h-6 object-contain"
+                                      />
+                                    </a>
+                                    <a 
+                                      href={variant.links.blibli}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-blue-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-blue-500"
+                                    >
+                                      <img 
+                                        src="images/marketplaces/blibli.png" 
+                                        alt="Blibli" 
+                                        className="h-6 object-contain"
+                                      />
+                                    </a>
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* Navigation Arrows */}
+                          <button 
+                            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white text-amber-900 rounded-full shadow-lg transition-all duration-300 hover:bg-amber-50"
+                            onClick={() => {
+                              setCurrentSlide(prev => (prev > 0 ? prev - 1 : (product.variants?.length || 1) - 1));
+                              setSelectedVariant(null);
+                            }}
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                          </button>
+                          <button 
+                            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white text-amber-900 rounded-full shadow-lg transition-all duration-300 hover:bg-amber-50"
+                            onClick={() => {
+                              setCurrentSlide(prev => (prev < (product.variants?.length || 1) - 1 ? prev + 1 : 0));
+                              setSelectedVariant(null);
+                            }}
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </button>
+                        </div>
+
+                        {/* Dots Navigation */}
+                        <div className="flex justify-center items-center gap-1.5 mt-4">
+                          {(product.variants || []).map((_, idx) => (
+                            <button
+                              key={idx}
+                              className={`h-1.5 rounded-sm transition-all duration-300 ${
+                                idx === currentSlide 
+                                  ? 'w-4 bg-amber-800' 
+                                  : 'w-1.5 bg-amber-200/70'
+                              }`}
+                              onClick={() => {
+                                setCurrentSlide(idx);
+                                setSelectedVariant(null);
+                              }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    // Show regular product links if no variants
+                    <div className="flex justify-center gap-3">
+                      {product.links && (
+                        <>
+                          <a 
+                            href={product.links.tokopedia}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-green-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-green-500"
+                          >
+                            <img 
+                              src="images/marketplaces/tokopedia.png" 
+                              alt="Tokopedia" 
+                              className="h-6 object-contain"
+                            />
+                          </a>
+                          <a 
+                            href={product.links.shopee}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-orange-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-orange-500"
+                          >
+                            <img 
+                              src="images/marketplaces/shopee.png" 
+                              alt="Shopee" 
+                              className="h-6 object-contain"
+                            />
+                          </a>
+                          <a 
+                            href={product.links.blibli}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center gap-1 flex-1 bg-white hover:bg-gray-50 text-blue-600 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-center border border-blue-500"
+                          >
+                            <img 
+                              src="images/marketplaces/blibli.png" 
+                              alt="Blibli" 
+                              className="h-6 object-contain"
+                            />
+                          </a>
+                        </>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -393,15 +632,15 @@ function App() {
                   <div className="text-beaver">Years of Excellence</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white-coffee">50+</div>
-                  <div className="text-beaver">Unique Flavors</div>
+                  <div className="text-3xl font-bold text-white-coffee">20+</div>
+                  <div className="text-beaver">Unique Products</div>
                 </div>
               </div>
             </div>
             
             <div className="animate-fade-in-right">
               <img 
-                src="https://images.pexels.com/photos/3850659/pexels-photo-3850659.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                src="images/herobg.jpg" 
                 alt="Chocolate making process"
                 className="rounded-2xl shadow-2xl w-full h-96 object-cover"
               />
@@ -517,7 +756,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white-coffee mb-4">
-              Why Choose Prospero?
+              Why Choose ProsperoFood?
             </h2>
           </div>
 
@@ -601,13 +840,13 @@ function App() {
       <footer className="bg-pine-tree text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4 text-white-coffee">PROSPERO</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white-coffee">PROSPEROFOOD</h3>
             <p className="text-beaver mb-4">
               Crafting chocolate perfection since...
             </p>
             <div className="border-t border-coffee pt-8 mt-8">
               <p className="text-beaver">
-                © 2025 Prospero All rights reserved.
+                © 2025 ProsperoFood All rights reserved.
               </p>
             </div>
           </div>
